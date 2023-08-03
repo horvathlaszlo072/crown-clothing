@@ -4,7 +4,7 @@ import {
   createUserDocumentFromAuth,
 } from "../../utils/firebase/firebase.utils";
 import FormInput from "../form-input/form-input.component";
-import './sign-up-form.styles.scss'
+import "./sign-up-form.styles.scss";
 import Button from "../button/button.component";
 
 const defaultFormFields = {
@@ -22,7 +22,7 @@ const SignUpForm = () => {
     setFormFields(defaultFormFields);
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event) => { 
     event.preventDefault();
 
     if (password !== confirmPassword) {
@@ -46,7 +46,7 @@ const SignUpForm = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    
+
     setFormFields({ ...formFields, [name]: value });
   };
 
@@ -56,16 +56,16 @@ const SignUpForm = () => {
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
-          label='Display Name'
+          label="Display Name"
           type="text"
           required
           onChange={handleChange}
           name="displayName"
           value={displayName}
-        /> 
+        />
 
         <FormInput
-          label='Email'
+          label="Email"
           type="email"
           required
           onChange={handleChange}
@@ -74,7 +74,7 @@ const SignUpForm = () => {
         />
 
         <FormInput
-          label='Password'
+          label="Password"
           type="password"
           required
           onChange={handleChange}
@@ -83,7 +83,7 @@ const SignUpForm = () => {
         />
 
         <FormInput
-          label='Confirm Password'
+          label="Confirm Password"
           type="password"
           required
           onChange={handleChange}
